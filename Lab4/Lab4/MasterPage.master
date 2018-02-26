@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <title>Project_Group15</title>
+    <style type="text/css">
+        body{
+            background-color:#303C6C;
+        }
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style19 {
+            font-size: large;
+            text-decoration: underline;
+            font-weight: 700;
+            font-family: cursive;
+        }
+        .auto-style23 {
+            width: 280px;
+            color: #CC00CC;
+            height: 56px;
+        }
+        .auto-style24 {
+            text-align: left;
+        }
+        .auto-style25 {
+            font-size: xx-large;
+        }
+        .auto-style26 {
+            text-align: center;
+        }
+        .auto-style27 {
+            width: 280px;
+            color: #CC00CC;
+            height: 28px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style27" style="border-width: thin; border-style: groove;  color: #FFFFFF; ">
+                    <div class="auto-style24">
+                        <asp:Label ID="Label1" runat="server" CssClass="auto-style25" Font-Names="Eras Medium ITC" Text="VARMA"></asp:Label>
+                    <asp:Menu ID="Menu1" runat="server" BorderColor="White" BorderStyle="None" BorderWidth="5px" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" RenderingMode="Table" StaticDisplayLevels="2" Width="400px" CssClass="auto-style19" ForeColor=White Height="30px" IncludeStyleBlock="False" Font-Names="Albany AMT" Font-Underline="False">
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    </div>
+                </td>
+            </tr>
+            </table>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <p>
+            &nbsp;</p>
+    </form>
+</body>
+</html>
