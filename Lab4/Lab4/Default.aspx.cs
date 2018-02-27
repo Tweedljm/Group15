@@ -80,7 +80,8 @@ public partial class Default : System.Web.UI.Page
                 con1.Open();
                 System.Data.SqlClient.SqlCommand command1 = new System.Data.SqlClient.SqlCommand();
                 command1.Connection = con1;
-                command1.CommandText = "select top 1 EmployeeID from dbo.login where UserName = '" + userName + "' ";
+                command1.CommandText = "select top 1 EmployeeID from dbo.login where UserName = @userName";
+                command1.Parameters.AddWithValue("@userName", userName);
                 System.Data.SqlClient.SqlDataReader reader1 = command1.ExecuteReader();
 
                 if (reader1.HasRows)
@@ -100,7 +101,8 @@ public partial class Default : System.Web.UI.Page
                 con2.Open();
                 System.Data.SqlClient.SqlCommand command2 = new System.Data.SqlClient.SqlCommand();
                 command2.Connection = con2;
-                command2.CommandText = "select top 1 ProfilePicture from dbo.Account where EmployeeID = " + Session["EmployeeID"];
+                command2.CommandText = "select top 1 ProfilePicture from dbo.Account where EmployeeID = @EmployeeID";
+                command2.Parameters.AddWithValue("@EmployeeID", Session["EmployeeID"]);
                 System.Data.SqlClient.SqlDataReader reader2 = command2.ExecuteReader();
 
                 if (reader2.HasRows)
